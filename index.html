@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style/output.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <title>Belajar Tailwind</title>
+</head>
+
+<body class="p-4 md:p-16 font-poppins">
+  <header class="flex flex-wrap justify-between items-center gap-4 py-6 border-b border-gray-200 px-4">
+    <div class="w-[150px] h-[34.3px] hidden md:block">
+      <img src="./image/Logo.png" alt="logo" class="w-full h-full" />
+    </div>
+  
+    <ul class="relative hidden md:flex flex-wrap items-center justify-center gap-6 w-full md:w-auto">
+      <li class="relative py-2 group">
+        <a class="group-hover:text-accent group-hover:font-bold" href="">Home</a>
+        <span class="absolute left-0 bottom-0 w-0 h-1 bg-accent group-hover:w-full transition-all duration-300"></span>
+      </li>
+      <li class="relative py-2 group">
+        <a class="group-hover:text-accent group-hover:font-bold" href="">Shop</a>
+        <span class="absolute left-0 bottom-0 w-0 h-1 bg-accent group-hover:w-full transition-all duration-300"></span>
+      </li>
+      <li class="relative py-2 group">
+        <a class="group-hover:text-accent group-hover:font-bold" href="">Plant care</a>
+        <span class="absolute left-0 bottom-0 w-0 h-1 bg-accent group-hover:w-full transition-all duration-300"></span>
+      </li>
+      <li class="relative py-2 group">
+        <a class="group-hover:text-accent group-hover:font-bold" href="">Blogs</a>
+        <span class="absolute left-0 bottom-0 w-0 h-1 bg-accent group-hover:w-full transition-all duration-300"></span>
+      </li>
+    </ul>
+
+    <div class="hidden md:flex gap-4 items-center w-full justify-end md:w-auto">
+      <span class="material-symbols-outlined cursor-pointer">search</span>
+      <span class="material-symbols-outlined cursor-pointer">shopping_cart</span>
+      <button class="flex gap-2 items-center bg-accent py-2 px-4 text-white rounded-md">
+        <span class="material-symbols-outlined">login</span> Login
+      </button>
+    </div>
+  
+
+    <div class="flex md:hidden w-full justify-between items-center gap-4">
+      <input type="text" placeholder="Search..." class="w-4/5 px-4 py-2 border rounded-md text-sm" />
+      <button class="text-2xl p-2">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </header>
+  
+  
+  
+
+
+  <section class="w-full flex items-center bg-gray-100 px-4 py-8 rounded-lg mt-8 flex-wrap md:flex-nowrap">
+    <div class="flex-1 space-y-4">
+      <h2 class="text-xs sm:text-sm md:text-base text-accent font-medium uppercase tracking-widest">
+        Welcome to GreenShop
+      </h2>
+  
+      <h1 class="text-2xl sm:text-3xl md:text-[56px] font-extrabold leading-snug md:leading-[1.1]">
+        LET’S MAKE A <br />
+        BETTER <span class="text-accent">PLANET</span>
+      </h1>
+  
+      <div class="space-y-2 max-w-xl">
+        <p class="text-gray-600 text-xs sm:text-sm md:text-base">
+          We are an online plant shop offering a wide range of cheap and trendy plants.
+        </p>
+        <p class="text-gray-600 text-xs sm:text-sm md:text-base">
+          Use our plants to create a unique Urban jungle. Order your favorite plants!
+        </p>
+      </div>
+  
+      <button class="mt-6 bg-accent text-white px-6 sm:px-8 py-2 sm:py-3 rounded-md text-xs sm:text-sm font-semibold shadow hover:bg-green-600 transition">
+        SHOP NOW
+      </button>
+    </div>
+  
+    <div class="flex-1 flex justify-center">
+      <img src="/image/Frame 20.png" alt="Plant" class="w-[200px] sm:w-[250px] md:w-full max-w-md" />
+    </div>
+  </section>
+  
+  
+
+    
+  <section class="mt-8">
+    <div class="flex flex-wrap md:justify-between items-center mb-6 gap-y-4">
+      
+      <ul class="flex flex-wrap gap-x-8 md:gap-x-24">
+        <li class="relative py-2 group">
+          <button class="group-hover:text-accent group-hover:font-bold transition text-sm sm:text-base">
+            All Plants
+          </button>
+          <span class="absolute left-0 bottom-0 w-0 h-1 bg-accent group-hover:w-full transition-all duration-300"></span>
+        </li>
+        <li class="relative py-2 group">
+          <button class="group-hover:text-accent group-hover:font-bold transition text-sm sm:text-base">
+            New Arrivals
+          </button>
+          <span class="absolute left-0 bottom-0 w-0 h-1 bg-accent group-hover:w-full transition-all duration-300"></span>
+        </li>
+        <li class="relative py-2 group">
+          <button class="group-hover:text-accent group-hover:font-bold transition text-sm sm:text-base">
+            Sale
+          </button>
+          <span class="absolute left-0 bottom-0 w-0 h-1 bg-accent group-hover:w-full transition-all duration-300"></span>
+        </li>
+      </ul>
+
+      <div class="hidden sm:flex items-center">
+        <label class="mr-4 text-sm">Sort by:</label>
+        <div class="relative">
+          <select class="appearance-none bg-transparent text-gray-700 pr-6 focus:outline-none text-sm">
+            <option>Default sorting</option>
+            <option>Low to High</option>
+            <option>High to Low</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+            <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+
+    <section class="py-8 w-full bg-white">
+      <div class="mt-1">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+          <div class="bg-white rounded shadow p-4 text-left">
+            <img src="/image/fot2.png" alt="Barberton Daisy" class="w-full h-48 object-contain mb-4 mx-auto" />
+            <h3 class="text-gray-700 font-medium">Barberton Daisy</h3>
+            <p class="text-green-600 font-semibold">$119.00</p>
+          </div>
+
+          <div class="bg-white rounded shadow p-4 text-left">
+            <img src="/image/fot3.jpg" alt="Angel Wing Begonia" class="w-full h-48 object-contain mb-4 mx-auto" />
+            <h3 class="text-gray-700 font-medium">Angel Wing Begonia</h3>
+            <p class="text-green-600 font-semibold ">$169.00</p>
+          </div>
+
+          <div class="bg-white rounded shadow p-4 text-left relative">
+            <span class="absolute top-2 left-2 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded">13% OFF</span>
+            <img src="/image/fot4.png" alt="African Violet" class="w-full h-48 object-contain mb-4 mx-auto" />
+            <h3 class="text-gray-700 font-medium">African Violet</h3>
+            <p class="text-green-600 font-semibold inline-block mr-2">$199.00</p>
+            <span class="line-through text-gray-400 text-sm">$229.00</span>
+          </div>
+
+          <div class="bg-white rounded shadow p-4 text-left relative">
+            <img src="/image/fot5.png" alt="Beach Spider Lily" class="w-full h-48 object-contain mb-4 mx-auto" />
+            <h3 class="text-gray-700 font-medium">Beach Spider Lily</h3>
+            <p class="text-green-600 font-semibold inline-block mr-2">$129.00</p>
+          </div>
+
+          <div class="bg-white rounded shadow p-4 text-left">
+            <img src="/image/fot6.png" alt="Blushing Bromeliad" class="w-full h-48 object-contain mb-4 mx-auto" />
+            <h3 class="text-gray-700 font-medium">Blushing Bromeliad</h3>
+            <p class="text-green-600 font-semibold">$139.00</p>
+          </div>
+
+          <div class="bg-white rounded shadow p-4 text-left relative">
+            <img src="/image/fot7.png" alt="Bird's Nest Fern" class="w-full h-48 object-contain mb-4 mx-auto" />
+            <h3 class="text-gray-700 font-medium">Bird's Nest Fern</h3>
+            <p class="text-green-600 font-semibold inline-block mr-2">$99.00</p>
+          </div>
+
+          <div class="bg-white rounded shadow p-4 text-left relative">
+            <img src="/image/fot8.jpg" alt="Broadleaf Lady Palm" class="w-full h-48 object-contain mb-4 mx-auto" />
+            <h3 class="text-gray-700 font-medium">Broadleaf Lady Palm</h3>
+            <p class="text-green-600 font-semibold inline-block mr-2">$59.00</p>
+          </div>
+
+          <div class="bg-white rounded shadow p-4 text-left relative">
+            <img src="/image/fot9.png" alt="Aluminium Plant" class="w-full h-48 object-contain mb-4 mx-auto" />
+            <h3 class="text-gray-700 font-medium">Aluminium Plant</h3>
+            <p class="text-green-600 font-semibold inline-block mr-2">$179.00</p>
+          </div>
+    
+        </div>
+
+        <div class="flex justify-center mt-8 space-x-2">
+          <button class="bg-green-600 text-white px-3 py-1 rounded">1</button>
+          <button class="border px-3 py-1 rounded">2</button>
+          <button class="border px-3 py-1 rounded">3</button>
+          <button class="border px-3 py-1 rounded">4</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-full bg-white py-6">
+      <div class="container mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-6">
+
+          <div class="flex flex-col lg:flex-row items-center justify-between bg-gray-50 p-6 rounded shadow-sm">
+            <img src="/image/fo10.png" alt="Summer Cactus" class="w-48 h-48 object-contain mb-4 lg:mb-0 lg:mr-6" />
+            <div class="text-right">
+              <h3 class="text-xl md:text-2xl font-semibold text-gray-800 leading-snug">
+                SUMMER CACTUS<br />& SUCCULENTS
+              </h3>
+              <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                We are an online plant shop offering a<br />
+                wide range of cheap and trendy plants
+              </p>
+              <button class="mt-4 bg-green-600 text-white text-sm px-5 py-2 rounded">Find More</button>
+            </div>
+          </div>
+
+          <div class="flex flex-col lg:flex-row items-center justify-between bg-gray-50 p-6 rounded shadow-sm">
+            <img src="/image/fot11.png" alt="Styling Trends" class="w-48 h-48 object-contain mb-4 lg:mb-0 lg:mr-6" />
+            <div class="text-right">
+              <h3 class="text-xl md:text-2xl font-semibold text-gray-800 leading-snug">
+                STYLING TRENDS<br />& MUCH MORE
+              </h3>
+              <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                We are an online plant shop offering a<br />
+                wide range of cheap and trendy plants
+              </p>
+              <button class="mt-4 bg-green-600 text-white text-sm px-5 py-2 rounded">Find More</button>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </section>
+    
+    
+
+    <footer class="w-full bg-white border-t pt-6">
+
+      <div class="bg-green-50 py-4">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-sm text-gray-700 space-y-4 md:space-y-0">
+          <div class="flex items-center space-x-2">
+            <div class="w-[150px] h-[34.3px]">
+              <img src="./image/Logo.png" alt="logo" class="w-full h-full" />
+            </div>
+          </div>
+    
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5s-3 1.343-3 3 1.343 3 3 3z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-7.5 8-13a8 8 0 10-16 0c0 5.5 8 13 8 13z" />
+            </svg>
+            <div>
+              <p>70 West Buckingham Ave.</p>
+              <p>Farmingdale, NY 11735</p>
+            </div>
+          </div>
+    
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16c1.1 0 2 .9 2 2v0.01L12 13 2 6.01V6c0-1.1.9-2 2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M22 6v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6" />
+            </svg>
+            <p>contact@greenshop.com</p>
+          </div>
+    
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2 4.5A2.5 2.5 0 014.5 2h1.379a2.5 2.5 0 012.45 2.006l.313 1.564a2.5 2.5 0 01-.641 2.313L7.828 9.828a12.048 12.048 0 005.344 5.344l1.945-1.117a2.5 2.5 0 012.313-.641l1.564.313A2.5 2.5 0 0122 18.121V19.5A2.5 2.5 0 0119.5 22C10.835 22 2 13.165 2 4.5z" />
+            </svg>
+            <p>+88 01911 717 490</p>
+          </div>
+
+          <div class="flex items-center space-x-2">
+            
+          </div>
+    
+        </div>
+      </div>
+      <div class="text-center py-4 text-gray-500 text-sm">
+        © 2025 GreenShop. All Rights Reserved.
+      </div>
+    </footer>
+</body>
+</html>
