@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register Page</title>
+  <link rel="stylesheet" href="../style/output.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .valid {
+      color: green;
+    }
+    .invalid {
+      color: red;
+    }
+    .input-error {
+      border-color: red;
+    }
+  </style>
+</head>
+<body class="p-4 md:p-16 font-poppins bg-gray-100">
+
+  <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-xl">
+
+    <a href="../index.html">
+        <div class="flex justify-center mb-6">
+            <img src="../image/logo.png" alt="Logo" class="max-w-[200px] h-auto object-contain mx-auto" />
+          </div>
+     </a>
+
+    <h2 class="text-3xl font-bold text-center text-green-600 mb-4">Register</h2>
+    <p class="text-sm text-gray-500 text-center mb-6">Create your account to continue</p>
+
+    <form class="space-y-5" onsubmit="return validateForm(event)">
+
+      <div>
+        <label class="block mb-1 text-sm text-gray-600">Username</label>
+        <input type="text" placeholder="Choose a username" required
+          class="w-full px-4 py-2 bg-gray-100 rounded focus:outline-none focus:ring-2 focus:ring-green-400">
+      </div>
+
+      <div>
+        <label class="block mb-1 text-sm text-gray-600">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required
+          class="w-full px-4 py-2 bg-gray-100 rounded focus:outline-none focus:ring-2 focus:ring-green-400">
+        <p id="email-warning" class="text-xs mt-1 text-red-500 hidden">Please enter a valid email address</p>
+      </div>
+
+      <div>
+        <label class="block mb-1 text-sm text-gray-600">Password</label>
+        <input type="password" id="password" placeholder="Create a password" required
+          class="w-full px-4 py-2 bg-gray-100 rounded focus:outline-none focus:ring-2 focus:ring-green-400">
+        <ul class="text-xs mt-2 space-y-1" id="password-rules">
+          <li id="length" class="invalid">8-25 characters</li>
+          <li id="uppercase" class="invalid">At least one uppercase letter</li>
+          <li id="lowercase" class="invalid">At least one lowercase letter</li>
+          <li id="number" class="invalid">At least one number</li>
+          <li id="special" class="invalid">At least one special character</li>
+          <li id="nospace" class="invalid">No spaces allowed</li>
+        </ul>
+      </div>
+
+      <div>
+        <label class="block mb-1 text-sm text-gray-600">Confirm Password</label>
+        <input type="password" id="confirmPassword" placeholder="Confirm your password" required
+          class="w-full px-4 py-2 bg-gray-100 rounded focus:outline-none focus:ring-2 focus:ring-green-400">
+      </div>
+
+      <div class="flex items-center text-sm text-gray-600">
+        <input type="checkbox" id="terms" class="mr-2" required />
+        <label for="terms">I agree to the <a href="#" class="text-green-600 hover:underline">terms and conditions</a></label>
+      </div>
+
+      <button type="submit" class="w-full bg-green-500 text-white py-2 rounded font-semibold hover:bg-green-600 transition">
+        REGISTER
+      </button>
+    </form>
+
+
+    <p class="mt-6 text-sm text-center text-gray-600">
+        Already have an account?
+        <a href="./login.html" class="text-green-600 font-medium hover:underline">Sign In Now</a>
+      </p>
+
+  </div>
+
+  
+  <script>
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+    const emailInput = document.getElementById('email');
+    const emailWarning = document.getElementById('email-warning');
+
+    const rules = {
+      length: document.getElementById('length'),
+      uppercase: document.getElementById('uppercase'),
+      lowercase: document.getElementById('lowercase'),
+      number: document.getElementById('number'),
+      special: document.getElementById('special'),
+      nospace: document.getElementById('nospace')
+    };
+
+    emailInput.addEventListener('input', () => {
+      const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      const value = emailInput.value;
+
+      if (!pattern.test(value)) {
+        emailInput.classList.add('input-error');
+        emailWarning.classList.remove('hidden');
+      } else {
+        emailInput.classList.remove('input-error');
+        emailWarning.classList.add('hidden');
+      }
+    });
+
+    passwordInput.addEventListener('input', () => {
+      const value = passwordInput.value;
+
+      rules.length.className = value.length >= 8 && value.length <= 25 ? 'valid' : 'invalid';
+      rules.uppercase.className = /[A-Z]/.test(value) ? 'valid' : 'invalid';
+      rules.lowercase.className = /[a-z]/.test(value) ? 'valid' : 'invalid';
+      rules.number.className = /\d/.test(value) ? 'valid' : 'invalid';
+      rules.special.className = /[\W_]/.test(value) ? 'valid' : 'invalid';
+      rules.nospace.className = !/\s/.test(value) ? 'valid' : 'invalid';
+    });
+
+    function validateForm(event) {
+      const password = passwordInput.value;
+      const confirmPassword = confirmPasswordInput.value;
+      const email = emailInput.value;
+
+      const emailPattern = /^[\w\.-]+@[\w\.-]+\.\w{2,}$/;
+      const passwordValid =
+        password.length >= 8 &&
+        password.length <= 25 &&
+        /[A-Z]/.test(password) &&
+        /[a-z]/.test(password) &&
+        /\d/.test(password) &&
+        /[\W_]/.test(password) &&
+        !/\s/.test(password);
+
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        event.preventDefault();
+        return false;
+      }
+
+      if (!passwordValid) {
+        alert("Password does not meet all requirements.");
+        event.preventDefault();
+        return false;
+      }
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        event.preventDefault();
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</body>
+</html>
